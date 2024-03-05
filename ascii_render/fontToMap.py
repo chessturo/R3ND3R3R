@@ -1,8 +1,6 @@
-###CHANGE THIS TO YOUR FILE PATH ON YOUR COMPUTER
-f = open("C:/Users/babla/R3nD3R3R/fonts/stripped_text.txt", "r", encoding='utf-8-sig') 
-
-#Creates a 2d array with each array containing an 8x16 representation of a glyph
-def create_arrays():
+# Creates a 2d array with each array containing an 8x16 representation of a glyph
+def create_arrays(path):
+    f = open(path, "r", encoding='utf-8-sig')
     array = []
     cur_letter = []
     count = 0
@@ -24,11 +22,9 @@ def create_arrays():
     verify(array)
 
     return array
-        
+
+
 def verify(i):
     for j in i:
         if (len(j) != 128):
             raise TypeError("glyph incorrect dimensions")
-
-
-create_arrays()
