@@ -11,19 +11,19 @@ def bestApproximation(m1: ndarray, m2: List[List[int]]):
     least_dist = float('inf')
     best_approx = None
     for mat in m2:
-        glyph = np.reshape(mat, (8, 16))
+        glyph = np.reshape(mat, (16, 8))
         dist = computeDistance(m1, glyph)
         if dist < least_dist:
             least_dist = dist
             best_approx = mat
-    return np.reshape(best_approx, (8, 16))
+    return np.reshape(best_approx, (16,8))
 
 
 def applyApproximation(img: ndarray, glyphs: List[List[int]]):
-    blocks_wide = img.shape[0] // 8
-    blocks_high = img.shape[1] // 16
+    blocks_wide = img.shape[1] // 8
+    blocks_high = img.shape[0] // 16
 
     for i in range(blocks_wide):
         for j in range(blocks_high):
-            block = img[i * 8:(i + 1) * 8, j * 16:(j + 1) * 16]
-            img[i * 8:(i + 1) * 8, j * 16:(j + 1) * 16] = bestApproximation(block, glyphs)
+            block = img[j * 16:(j + 1) * 16, i * 8:(i + 1) * 8]
+            img[j * 16:(j + 1) * 16, i * 8:(i + 1) * 8] = bestApproximation(block, glyphs)
