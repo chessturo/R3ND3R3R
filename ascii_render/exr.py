@@ -7,5 +7,5 @@ def openImage(filePath: str):
     return image_grey
 
 def writeImage(filePath: str, image: ndarray):
-    ski.io.imsave(filePath, image)
+    ski.io.imsave(filePath, image.astype('float32'), plugin='imageio', extension='.exr')
 
