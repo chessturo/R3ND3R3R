@@ -15,7 +15,7 @@
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
     <option name="SCRIPT_NAME" value="ascii_render" />
-    <option name="PARAMETERS" value="test/L.png fonts/Bm437_IBM_VGA_8x16.stripped test/output.exr" />
+    <option name="PARAMETERS" value="test/cat.jpg fonts/Bm437_IBM_VGA_8x16.yaff test/output.exr" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="true" />
