@@ -1,4 +1,5 @@
 import skimage as ski
+import simpleimageio as sio
 from numpy import ndarray
 
 def openImage(filePath: str):
@@ -12,4 +13,5 @@ def writeImage(filePath: str, image: ndarray):
     # ski.io.imsave(filePath, image.astype('float32'), plugin='imageio', extension='.exr')
     ski.io.imshow(image)
     ski.io.show()
+    sio.write(filePath, image)
 
